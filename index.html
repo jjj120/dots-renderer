@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dots on Black Background</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="background">
+        <div id="canvas"></div>
+    </div>
+    <div class="controls">
+        <table>
+            <tr>
+                <td><label for="numDots">Number of Dots:</label></td>
+                <td><input onchange="generateDots()" type="number" id="numDots" value="100"></td>
+            </tr>
+            <tr>
+                <td><label for="dotSize">Dot Size [px]:</label></td>
+                <td><input onchange="changeDotsSize()" type="number" id="dotSize" value="5"></td>
+            </tr>
+            <tr>
+                <td><label for="canvasSize">Canvas Size [%]:</label></td>
+                <td><input onchange="changeCanvasSize()" type="number" id="canvasSize" value="80"></td>
+            </tr>
+            <tr>
+                <td><label for="bgColor">Background:</label></td>
+                <td><input onchange="changeBg()" type="color" id="bgColor"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
