@@ -2,6 +2,7 @@ function generateDots() {
     const canvas = document.getElementById('canvas');
     const numDots = parseInt(document.getElementById('numDots').value);
     const dotSize = parseInt(document.getElementById('dotSize').value);
+    const canvasColor = document.getElementById('canvasColor').value;
 
     // Clear previous dots
     canvas.innerHTML = '';
@@ -18,7 +19,7 @@ function generateDots() {
         dot.style.position = 'absolute';
         dot.style.width = `${dotSize}px`;
         dot.style.height = `${dotSize}px`;
-        dot.style.backgroundColor = 'white';
+        dot.style.backgroundColor = canvasColor;
         dot.style.borderRadius = '50%';
         dot.style.left = `${xPos}%`;
         dot.style.top = `${yPos}%`;
@@ -28,6 +29,8 @@ function generateDots() {
 
     changeDotsSize();
     changeCanvasSize();
+    changeCanvasColor();
+    changeDotsColor();
     changeBg();
 }
 
@@ -55,9 +58,24 @@ function changeCanvasSize() {
 function changeBg() {
     const bg = document.getElementById('background');
     const color = document.getElementById('bgColor').value;
-
     bg.style.backgroundColor = color;
 }
 
+function changeCanvasColor() {
+    const canvas = document.getElementById('canvas');
+    const color = document.getElementById('canvasColor').value;
+    canvas.style.backgroundColor = color;
+}
+
+
+function changeDotsColor() {
+    const canvas = document.getElementById('canvas');
+    const color = document.getElementById('dotsColor').value;
+
+    const dots = canvas.getElementsByClassName('dot');
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].style.backgroundColor = color;
+    }
+}
 
 generateDots();
